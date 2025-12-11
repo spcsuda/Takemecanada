@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Me Canada - Feedback Survey</title>
+    <style>
+        :root {
+            --primary-red: #E31E24;
+            --primary-blue: #1F4E79;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-red);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            max-width: 250px; 
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p.intro {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-group:last-child {
+            border-bottom: none;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .sub-label {
+            display: block;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        input[type="text"], 
+        input[type="tel"], 
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, 
+        input[type="tel"]:focus, 
+        textarea:focus {
+            border-color: var(--primary-red);
+            outline: none;
+        }
+
+        .radio-option {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .radio-option input {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        .radio-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .sinhala-text {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            margin-top: 2px;
+        }
+
+        button.submit-btn {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        button.submit-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-container">
+        <img src="2d logo.jpg" alt="Take Me Canada Logo">
+    </div>
+
+    <h1>Moldova Job Feedback Survey</h1>
+    <p class="intro">
+        Thank you for your feedback. This helps us improve our services.<br>
+        අපගේ සේවාවන් දියුණු කර ගැනීම සඳහා ඔබේ අදහස් අපට ඉතා වැදගත් වේ.
+    </p>
+
+    <form action="https://formspree.io/f/mldqpyab" method="POST">
+
+        <div class="form-group">
+            <label>1. Your Name</label>
+            <span class="sub-label">ඔබගේ නම (Facebook/Messenger හි සඳහන් පරිදි)</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label>2. Contact Number (Optional)</label>
+            <span class="sub-label">දුරකථන අංකය (අවශ්‍ය නම් පමණක්)</span>
+            <input type="tel" name="phone" placeholder="07XXXXXXXX">
+        </div>
+
+        <div class="form-group">
+            <label>3. Did we invite you for the Interview?</label>
+            <span class="sub-label">අප විසින් ඔබව සම්මුඛ පරීක්ෂණයක් සඳහා කැඳවනු ලැබුවේද?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q3_yes" name="interview_invite" value="Yes, attended">
+                <label for="q3_yes" class="radio-text">Yes, I went for the interview <span class="sinhala-text">ඔව්, මම සම්මුඛ පරීක්ෂණයට සහභාගී වුනෙමි</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q3_no" name="interview_invite" value="No, not invited">
+                <label for="q3_no" class="radio-text">No, I was not invited <span class="sinhala-text">නැත, මට සම්මුඛ පරීක්ෂණයක් සඳහා ආරාධනා නොලැබුණි</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>4. Did you receive a reply within a reasonable time?</label>
+            <span class="sub-label">ශාධාර්ණ කාලයක් තුලැ අපගේ කාර්ය මණ්ඩදයැන් පිරිතුරක් ලැබුවේද?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q4_yes" name="reply_time" value="Yes">
+                <label for="q4_yes" class="radio-text">Yes <span class="sinhala-text">ඔව්</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q4_no" name="reply_time" value="No">
+                <label for="q4_no" class="radio-text">No <span class="sinhala-text">නැත</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q4_unsure" name="reply_time" value="Not sure">
+                <label for="q4_unsure" class="radio-text">Not sure <span class="sinhala-text">විශ්වාස නැත</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>5. How clear was the advertisement?</label>
+            <span class="sub-label">රැක්යඳ අ඗බුර්තු පිරිබ අොන්නර්ග පම ොහනග හැගී සෂ පිහඊාලඏ?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q5_very" name="clarity" value="Very clear">
+                <label for="q5_very" class="radio-text">Very clear <span class="sinhala-text">ඇතා පිහඊාලීය</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q5_somewhat" name="clarity" value="Somewhat clear">
+                <label for="q5_somewhat" class="radio-text">Somewhat clear <span class="sinhala-text">යම් මට්ටරැගට පිහඊාලීය</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q5_neutral" name="clarity" value="Neutral">
+                <label for="q5_neutral" class="radio-text">Neutral <span class="sinhala-text">මධ්දස්තයී</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q5_unclear" name="clarity" value="Unclear">
+                <label for="q5_unclear" class="radio-text">Unclear <span class="sinhala-text">පිහඊාලි නැත</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>6. Was there enough information about requirements?</label>
+            <span class="sub-label">සුදුශුඛම් පිරිභවේම ප්රමාණවත ත්යුරු ධාන් දැගන්නීමේ අඤංගේ වැබී?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q6_yes" name="info_quality" value="Informative">
+                <label for="q6_yes" class="radio-text">Yes, informative <span class="sinhala-text">ඔව්, තේරටුරු සහීත වීය</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q6_somewhat" name="info_quality" value="Somewhat">
+                <label for="q6_somewhat" class="radio-text">Somewhat informative <span class="sinhala-text">යම් මට්ටරැගට තේරටුරු සහීත වීය</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q6_not" name="info_quality" value="Not informative">
+                <label for="q6_not" class="radio-text">Not informative <span class="sinhala-text">තේරටුරු අඤංග නොවීය</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>7. How did you understand this opportunity?</label>
+            <span class="sub-label">මෙම ගැන්ණන් ඔබ ർහන ගත්න කෙශෙක?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q7_mig" name="perception" value="Migration Opportunity">
+                <label for="q7_mig" class="radio-text">Migration opportunity <span class="sinhala-text">සංඛ්රමණ වීමේ අවශ්යවක් ලෙශ</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q7_job" name="perception" value="Job Only">
+                <label for="q7_job" class="radio-text">Job opportunity only <span class="sinhala-text">රැක්ය අවශ්යවක් ලෙශ පමණක්</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>8. Do you like to migrate to Moldova?</label>
+            <span class="sub-label">මෝලඇොවා වෙට සංඛ්රමණ වීමට ඔබට කැඳඹට්තිගෙ තිභේ?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q8_mig_job" name="migration_intent" value="Job with Migration">
+                <label for="q8_mig_job" class="radio-text">Find a job with migration <span class="sinhala-text">සංඛ්රමණ වීමේ අරමු෈ින් රැක්යවග් සිගයම්</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q8_money" name="migration_intent" value="Job and Salary Only">
+                <label for="q8_money" class="radio-text">Interest is only Job and Salary <span class="sinhala-text">අරමු෈ය රැක්යව සහ වැටීප පමණී</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q8_check" name="migration_intent" value="Checking only">
+                <label for="q8_check" class="radio-text">Just applied to check <span class="sinhala-text">තොරටුරු ඟානගැනේ පමණක් ඇල්ේුම් කරේමි</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>9. Total Cost is LKR 1,600,000. Your situation?</label>
+            <span class="sub-label">අැස්තමේන්වුකීත පීරීවය රෙ. 1,600,000 පමණ වෙ. ඔබේ මුල්ය තත්වය?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q9_have" name="finance" value="Have money">
+                <label for="q9_have" class="radio-text">I have money to pay <span class="sinhala-text">ගවීම් සිදු කීරම් සඳහා මුදල් පවතීමි</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q9_loan" name="finance" value="Need Loan">
+                <label for="q9_loan" class="radio-text">I have to apply for a bank loan <span class="sinhala-text">බැංඛු පිර්ඹඳය සඳහා ඇල්ේුම් කීරමට සිදුවේ</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q9_cant" name="finance" value="Cannot afford">
+                <label for="q9_cant" class="radio-text">Sorry, I don't have money <span class="sinhala-text">මෙම මුදල මට දැරරීම නොහැක්</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>10. What do you think of our advertisement?</label>
+            <span class="sub-label">අපගේ රැක්ය ඟානණීම පිරිභ ඔබේ අදහස කුනක්ඏ?</span>
+            
+            <div class="radio-option">
+                <input type="radio" id="q10_scam" name="impression" value="Scam">
+                <label for="q10_scam" class="radio-text">Thought it was a Scam <span class="sinhala-text">වංචාවක් යැයී සීණ්නී</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q10_good" name="impression" value="Good Opportunity">
+                <label for="q10_good" class="radio-text">It is a good opportunity <span class="sinhala-text">මෙය හෝට අවශ්යවක් ලෙශී සීණමී</span></label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="q10_fedup" name="impression" value="Fed up">
+                <label for="q10_fedup" class="radio-text">Fed up with these ads <span class="sinhala-text">මෙවේන් ඟානණී ගැ කරකීර්යේ සීණඏම්</span></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>11. Additional Comments</label>
+            <span class="sub-label">වෙනත් අදහස් හු යේජනා</span>
+            <textarea name="comments" rows="4" placeholder="Type here..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Feedback / යොමු කරන්න</button>
+
+    </form>
+</div>
+
+</body>
+</html>
